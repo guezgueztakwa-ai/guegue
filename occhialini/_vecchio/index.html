@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triennale Milano – Luce del Nord</title>
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/stile_esercizio4.css">
+  <link rel="stylesheet" href="css/configuratore.css">
+  <!-- Three.js: diciamo al browser dove trovare la libreria -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+        <div class="row pt-4 pb-5 mb-5 align-items-center">
+            <div class="col-6 col-lg-2">
+              <a href="#"><img class="logo" src="img/logo-triennale.svg" alt="Triennale Milano"></a>
+            </div>
+            <div class="col-lg-9 nav-wrapper d-none d-lg-block">
+                <ul class="nav-list">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link selected"><strong>Mostre</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Museo del <strong>Design</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Teatro</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Visita</strong></a>
+                      </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-1 d-flex justify-content-end align-items-center">
+              <button class="btn btn-cerca">Cerca</button>
+              <button class="btn btn-menu d-block d-lg-none">Menu</button>
+            </div>
+        </div>
+
+        <div class="mobile-nav-wrapper d-lg-none">
+                 <button class="btn btn-close mb-3">Close</button> 
+                <ul class="nav-list">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link selected"><strong>Mostre</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Museo del <strong>Design</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Teatro</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Visita</strong></a>
+                      </li>
+                </ul> 
+        </div>
+    </div>
+
+    <div class="container-fluid content-wrapper">
+          
+          <div class="row prima-row mb-5">
+                <div class="col-12 col-sm-6 mb-3 mb-md-0">
+                    <h1 class="font-3">Luce del Nord</h1>
+                </div>
+                <div class="col-12 col-sm-5">
+                    <h2 class="font-2 color-gray font-normal">La lampada PH5 di Poul Henningsen, un oggetto da osservare nelle sue diverse configurazioni</h2>
+                </div>
+          </div>
+            
+          <div class="row mb-5 pt-3">
+              <div class="col-12 testo-colonne">
+                  La PH5 di Poul Henningsen, progettata nel 1958, è un’icona del design danese. Caratterizzata da un sistema di paralumi multipli, diffonde la luce in modo uniforme senza abbagliare. L’approccio di Henningsen in tutti i suoi progetti di illuminazione fu tecnico prima che estetico: la forma dei paralumi nasce dal calcolo di come la luce viene riflessa e schermata. La mostra racconta la lampada attraverso le sue configurazioni: le versioni pensate per l’allestimento e quelle che ogni visitatore può comporre da sé, cambiando i colori delle singole parti.
+              </div>
+          </div>
+
+    </div>
+
+
+    <!-- qui apriremo il div .sfondo-0 -->
+        <div class="sfondo-0">
+        <div class="container content-wrapper">
+
+            <div class="row mb-5 pt-4 pb-4 align-items-center">
+                <div class="col-8 offset-3 col-md-6 offset-md-5 col-lg-5 mt-4 offset-lg-6 bg-color-white p-4">
+                    <strong>La mostra</strong><br> Una sala, una lampada, molte versioni. La PH5 è appesa al centro e cambia configurazione durante la visita: si guarda da sotto, da lato, da lontano.
+
+                </div>
+            </div>
+        </div>
+        </div>    
+    <!-- qui si chiude .sfondo-0 -->
+
+
+    <div class="container content-wrapper">
+            
+          <div class="row mb-5 pt-3">
+              <div class="col-12 testo-2colonne">
+                  Henningsen ha progettato la PH5 per bilanciare luce diretta e indiretta, migliorando il benessere attraverso un’illuminazione confortevole, pensando soprattutto alla vita nei paesi nordici, dove la luce naturale può mancare per molti mesi. Ogni paralume ha un compito preciso: quello grande scherma la sorgente, quelli piccoli la distribuiscono verso il basso, l’anello e la calotta correggono il colore della luce. Per questo cambiare il colore di una parte cambia anche il modo in cui la lampada si legge nello spazio.
+              </div>
+          </div>
+    </div>
+
+
+    <!-- qui apriremo il div .sfondo-1 -->
+     <div class="sfondo-1">
+        <div class="container content-wrapper">
+            <div class="row mb-5 pt-4 pb-4 align-items-center">
+                <div class="col-12 col-lg-6">
+                    <img class="img-fluid" src="img/ph5-dettaglio.jpg" alt="La PH5 vista da sotto, accesa">
+                </div>
+                <div class="col-9 offset-1 col-md-6 col-lg-5 mt-4 offset-lg-0">
+                    <strong>Il visualizzatore</strong><br> Più in basso trovi la lampada in 3D: puoi girarla, guardarla nelle versioni pensate per la mostra e comporre la tua, una parte alla volta.
+
+                </div>
+            </div>
+        </div>
+        </div>
+    <!-- qui si chiude .sfondo-1 -->
+
+    <!-- ===== qui inizia la sezione "In mostra" con il visualizzatore ===== -->
+    <div class="container content-wrapper sezione-configuratore">
+        <div class="row mb-4">
+            <div class="col-12 col-lg-8">
+                <p class="sovratitolo">In mostra · Luce del Nord</p>
+                <h2 class="font-3">Osserva la PH5</h2>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <!-- PASSO 1: lo spazio per il 3D -->
+            <div class="col-12 col-lg-8">
+                <div id="visore" class="visore">
+                    <p class="visore-segnaposto">Qui andrà il 3D</p>
+                </div>
+
+                <!-- le visuali: data-posizione = dove va la camera (x, y, z) -->
+                <div class="visuali">
+                    <button type="button" class="visuale selected" data-posizione="3,2,4">Tre quarti</button>
+                    <button type="button" class="visuale" data-posizione="0,0.2,5">Di fronte</button>
+                    <button type="button" class="visuale" data-posizione="0,5.5,1.2">Dall'alto</button>
+                    <button type="button" class="visuale" data-posizione="0.6,-4.5,1.2">Da sotto</button>
+                    <button type="button" class="visuale" data-posizione="2.2,-0.6,2">Dettaglio</button>
+                    <button type="button" class="visuale" data-posizione="5,3,7">Da lontano</button>
+                    <button type="button" class="animazione">Avvia animazione</button>
+                </div>
+            </div>
+
+
+            <!-- PASSO 2: il pannello con il titolo e le opzioni da scegliere -->
+            <div class="col-12 col-lg-4">
+                <div class="pannello">
+                    <p class="sovratitolo">Poul Henningsen, 1958</p>
+                    <h3 class="font-3">PH5</h3>
+                    <p class="descrizione">Un sistema di paralumi multipli che diffonde la luce in modo uniforme, senza abbagliare</p>
+
+                    <!-- gli accostamenti: data-colori elenca i nomi dei colori nell'ordine dei 4 pannelli qui sotto -->
+                    <div class="opzione">
+                        <h3 class="opzione-titolo">Accostamenti <span class="opzione-valore">Personalizzato</span></h3>
+                        <div class="accostamenti">
+                            <button type="button" class="accostamento" data-nome="Accostamento Mare" data-colori="Carta da zucchero|Celeste|Azzurro fumo|Nocciola">Mare</button>
+                            <button type="button" class="accostamento" data-nome="Accostamento Tramonto" data-colori="Rosso corallo|Arancio|Caramello|Bordeaux scuro">Tramonto</button>
+                            <button type="button" class="accostamento" data-nome="Accostamento Petalo" data-colori="Rosa antico|Cipria|Rosa salmone|Bordeaux scuro">Petalo</button>
+                        </div>
+                    </div>
+
+                    <div class="opzione">
+                    <h3 class="opzione-titolo">Montatura <span class="opzione-valore">Vinaccia</span></h3>
+                    <div class="campioni" data-parti="struttura">
+                        <button type="button" class="campione" data-color="#E3A9A9" data-nome="Rosa antico" style="background-color: #E3A9A9;" aria-label="Rosa antico"></button>
+                        <button type="button" class="campione" data-color="#9DB4C0" data-nome="Carta da zucchero" style="background-color: #9DB4C0;" aria-label="Carta da zucchero"></button>
+                        <button type="button" class="campione selected" data-color="#7A1F2B" data-nome="Vinaccia" style="background-color: #7A1F2B;" aria-label="Vinaccia"></button>
+                        <button type="button" class="campione" data-color="#E8452C" data-nome="Rosso corallo" style="background-color: #E8452C;" aria-label="Rosso corallo"></button>
+                        <button type="button" class="campione" data-color="#C9AE88" data-nome="Sabbia" style="background-color: #C9AE88;" aria-label="Sabbia"></button>
+                    </div>
+                    </div>
+
+                    <div class="opzione">
+                    <h3 class="opzione-titolo">Aste <span class="opzione-valore">Cipria</span></h3>
+                    <div class="campioni" data-parti="aste">
+                        <button type="button" class="campione selected" data-color="#F2D0CC" data-nome="Cipria" style="background-color: #F2D0CC;" aria-label="Cipria"></button>
+                        <button type="button" class="campione" data-color="#C3D7E0" data-nome="Celeste" style="background-color: #C3D7E0;" aria-label="Celeste"></button>
+                        <button type="button" class="campione" data-color="#5E1A2A" data-nome="Prugna" style="background-color: #5E1A2A;" aria-label="Prugna"></button>
+                        <button type="button" class="campione" data-color="#F26B3A" data-nome="Arancio" style="background-color: #F26B3A;" aria-label="Arancio"></button>
+                        <button type="button" class="campione" data-color="#D8C3A5" data-nome="Beige" style="background-color: #D8C3A5;" aria-label="Beige"></button>
+                    </div>
+                    </div>
+
+                    <div class="opzione">
+                    <h3 class="opzione-titolo">Lenti <span class="opzione-valore">Rosa salmone</span></h3>
+                    <div class="campioni" data-parti="lenti">
+                        <button type="button" class="campione selected" data-color="#F0B5A0" data-nome="Rosa salmone" style="background-color: #F0B5A0;" aria-label="Rosa salmone"></button>
+                        <button type="button" class="campione" data-color="#A7BAC4" data-nome="Azzurro fumo" style="background-color: #A7BAC4;" aria-label="Azzurro fumo"></button>
+                        <button type="button" class="campione" data-color="#8B1E2D" data-nome="Granata" style="background-color: #8B1E2D;" aria-label="Granata"></button>
+                        <button type="button" class="campione" data-color="#D93A2B" data-nome="Rosso papavero" style="background-color: #D93A2B;" aria-label="Rosso papavero"></button>
+                        <button type="button" class="campione" data-color="#B98E5E" data-nome="Caramello" style="background-color: #B98E5E;" aria-label="Caramello"></button>
+                    </div>
+                    </div>
+
+                    <div class="opzione">
+                    <h3 class="opzione-titolo">Dettagli in gomma <span class="opzione-valore">Blu nebbia</span></h3>
+                    <div class="campioni" data-parti="gomma">
+                        <button type="button" class="campione" data-color="#F6D6D6" data-nome="Rosa tenue" style="background-color: #F6D6D6;" aria-label="Rosa tenue"></button>
+                        <button type="button" class="campione selected" data-color="#8FA9B8" data-nome="Blu nebbia" style="background-color: #8FA9B8;" aria-label="Blu nebbia"></button>
+                        <button type="button" class="campione" data-color="#4F0613" data-nome="Bordeaux scuro" style="background-color: #4F0613;" aria-label="Bordeaux scuro"></button>
+                        <button type="button" class="campione" data-color="#FF3B1F" data-nome="Rosso fuoco" style="background-color: #FF3B1F;" aria-label="Rosso fuoco"></button>
+                        <button type="button" class="campione" data-color="#A88462" data-nome="Nocciola" style="background-color: #A88462;" aria-label="Nocciola"></button>
+                    </div>
+                    </div>
+
+                    <div class="opzione">
+                        <h3 class="opzione-titolo">Misura <span class="opzione-valore">Classic - Ø 50 cm</span></h3>
+                        <div class="misure">
+                            <button type="button" class="misura" data-scala="0.6" data-nome="Mini - Ø 30 cm">Mini - Ø 30 cm</button>
+                            <button type="button" class="misura selected" data-scala="1" data-nome="Classic - Ø 50 cm">Classic - Ø 50 cm</button>
+                            <button type="button" class="misura" data-scala="1.2" data-nome="Grande - Ø 60 cm">Grande - Ø 60 cm</button>
+                        </div>
+                    </div>
+
+                    <div class="opzione">
+                        <h3 class="opzione-titolo">Finitura <span class="opzione-valore">Opaco</span></h3>
+                        <div class="finiture">
+                            <button type="button" class="finitura selected" data-ruvidezza="0.9" data-nome="Opaco">Opaco</button>
+                            <button type="button" class="finitura" data-ruvidezza="0.15" data-nome="Lucido">Lucido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- l'istruzione per usare il visore, sotto a tutto -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <p class="istruzioni">Trascina per girare la lampada, usa la rotella per avvicinarti</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== qui finisce la sezione "In mostra" ===== -->
+
+    <!-- ===== qui inizia la sezione con l'animazione delle aste e le composizioni ===== -->
+    <div class="container content-wrapper sezione-occhiali">
+        <div class="row mb-4">
+            <div class="col-12 col-lg-8">
+                <p class="sovratitolo">In movimento · Composizioni</p>
+                <h2 class="font-3">Le aste e i colori</h2>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <!-- a sinistra: gli occhiali con le aste che si aprono e si chiudono -->
+            <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+                <div id="visore-aste" class="visore"></div>
+            </div>
+
+            <!-- a destra: le immagini delle composizioni (le crea il JavaScript dal modello 3D) -->
+            <div class="col-12 col-lg-4">
+                <div class="composizioni">
+                    <figure class="composizione" data-accostamento="Accostamento Mare">
+                        <img alt="Gli occhiali nella composizione Mare">
+                        <figcaption>Mare</figcaption>
+                    </figure>
+                    <figure class="composizione" data-accostamento="Accostamento Tramonto">
+                        <img alt="Gli occhiali nella composizione Tramonto">
+                        <figcaption>Tramonto</figcaption>
+                    </figure>
+                    <figure class="composizione" data-accostamento="Accostamento Petalo">
+                        <img alt="Gli occhiali nella composizione Petalo">
+                        <figcaption>Petalo</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== qui finisce la sezione con l'animazione delle aste e le composizioni ===== -->
+
+    <!-- qui si inserisce il codice JavaScript -->
+<script type="module" src="js/configuratore.js"></script>
+<script type="module" src="js/occhiali-aste.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const btnMenu = document.querySelector('.btn-menu');
+    const btnClose = document.querySelector('.btn-close');
+    const mobileNavWrapper = document.querySelector('.mobile-nav-wrapper');
+    const navLinks = document.querySelectorAll('.mobile-nav-wrapper .nav-link');
+    
+    // Assicurati che il display sia flex prima di aggiungere show
+    btnMenu.addEventListener('click', function() {
+        mobileNavWrapper.style.display = 'flex';
+        // Piccolo delay per permettere al display di attivarsi
+        setTimeout(() => {
+            mobileNavWrapper.classList.add('show');
+        }, 10);
+    });
+    
+    // Chiude il menu mobile
+    function closeMenu() {
+        mobileNavWrapper.classList.remove('show');
+        // Rimuovi display dopo l'animazione
+        setTimeout(() => {
+            if (!mobileNavWrapper.classList.contains('show')) {
+                mobileNavWrapper.style.display = 'none';
+            }
+        }, 300); // Stesso tempo della transizione CSS
+    }
+    
+    btnClose.addEventListener('click', closeMenu);
+    
+    mobileNavWrapper.addEventListener('click', function(e) {
+        let isLink = false;
+        navLinks.forEach(function(link) {
+            if (link.contains(e.target)) {
+                isLink = true;
+            }
+        });
+        
+        if (!isLink) {
+            closeMenu();
+        }
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>
