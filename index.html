@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TG One — Occhiali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="models/modello.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="bar"></div>
+<nav><a class="logo" href="#hero"><svg width="26" height="12" viewBox="0 0 26 12" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="4.5"/><circle cx="20" cy="6" r="4.5"/><path d="M10.5 5.5q2.5-2 5 0"/></svg>TG One</a><div class="links"><a href="#esploso">Design</a><a href="#specifiche">Specifiche</a><a href="#colori">Colori</a><a href="#lenti">Lenti</a><a href="#prova">Prova virtuale</a><a class="buy" href="#acquista">Acquista</a></div></nav>
+
+<section id="hero">
+  <p class="eyebrow reveal">Nuovo</p>
+  <h1 class="reveal grad">TG One</h1>
+  <p class="lead reveal">Cristallo puro. Peso piuma. Progettati per sparire sul viso.</p>
+  <canvas class="v" id="c1"></canvas>
+  <div class="btns"><a class="btn p" href="#acquista">Acquista</a><a class="btn s" href="#prova">Provali virtualmente</a></div>
+  <p class="price">Da 189 €</p>
+  <a class="scrollcue" href="#esploso" aria-label="Scorri"><span></span></a>
+</section>
+
+<section id="esploso"><div class="sticky">
+  <canvas class="v" id="c2"></canvas>
+  <div class="head" id="eHead"><p class="eyebrow">Design</p><h2>Ogni dettaglio,<br>al suo posto.</h2><p class="lead">Scomponi TG One e scopri ogni pezzo.</p></div>
+  <div class="cap" id="cap"></div>
+  <div class="ctrl">
+    <div class="partbar"><button class="arr" id="prevP" aria-label="Pezzo precedente">‹</button><div id="parts"></div><button class="arr" id="nextP" aria-label="Pezzo successivo">›</button></div>
+    <button class="btn p" id="expBtn">Scomponi</button>
+  </div>
+</div></section>
+
+<section id="specifiche" class="dark">
+  <p class="eyebrow reveal">Specifiche</p>
+  <h2 class="reveal">Piccoli numeri.<br>Grande differenza.</h2>
+  <div class="grid">
+    <div class="card reveal"><svg viewBox="0 0 24 24"><path d="M12 3v3M5 21h14l-2-11H7z"/><circle cx="12" cy="7.5" r="1.5"/></svg><div class="n">18<small> g</small></div><p>Leggerissimi, li dimentichi addosso.</p></div>
+    <div class="card reveal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><div class="n">UV400</div><p>Protezione totale dai raggi UVA e UVB.</p></div>
+    <div class="card reveal"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="18" rx="3"/><path d="M9 9h6M9 15h6"/></svg><div class="n">5<small> cilindri</small></div><p>Cerniere in acciaio inox per un'apertura fluida.</p></div>
+    <div class="card reveal"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg><div class="n">146<small> mm</small></div><p>Larghezza frontale avvolgente.</p></div>
+  </div>
+</section>
+
+<section id="colori">
+  <p class="eyebrow reveal">Colori</p>
+  <h2 class="reveal">Il tuo stile.<br>La tua tinta.</h2>
+  <canvas class="v" id="c3"></canvas>
+  <div class="pal" id="pal"></div>
+  <p id="nomeCol">Cristallo originale</p>
+  <p class="hint">Trascina per ruotare</p>
+</section>
+
+
+<section id="lenti">
+  <p class="eyebrow reveal">Lenti</p>
+  <h2 class="reveal">Una montatura.<br>Ogni luce.</h2>
+  <p class="lead reveal">Scegli la lente giusta per la tua giornata. Si aggiorna anche nella prova virtuale.</p>
+  <canvas class="v" id="c4"></canvas>
+  <div class="lensbar" id="lensbar"></div>
+  <p class="hint" id="lensTxt"></p>
+</section>
+
+<section id="misure">
+  <p class="eyebrow reveal">Misure</p>
+  <h2 class="reveal">Calzata perfetta.</h2>
+  <p class="lead reveal">Ogni misura è ricavata dal modello 3D, al decimo di millimetro.</p>
+  <div class="tech reveal">
+    <div class="sheet">
+      <div class="sh-h"><span>TG ONE · TAVOLA 01</span><span>Scala 1:1 · mm</span></div>
+      <div class="dw"><canvas id="dFront"></canvas><svg id="sFront"></svg><em>Vista frontale</em></div>
+      <div class="dw"><canvas id="dSide"></canvas><svg id="sSide"></svg><em>Vista laterale</em></div>
+    </div>
+    <div class="spec">
+      <div class="mark"><span>Sigla sull'asta</span><b id="sigla">— □ — · —</b></div>
+      <dl id="dims"></dl>
+      <div class="fit">
+        <span class="fl">La larghezza del tuo viso</span>
+        <div class="seg" id="seg"><button data-w="130">Stretto</button><button data-w="140" class="on">Medio</button><button data-w="150">Largo</button></div>
+        <div class="scale"><div class="zone" id="zone"></div><div class="pin" id="pin"></div></div>
+        <div class="sc-l"><span>125</span><span>135</span><span>145</span><span>155 mm</span></div>
+        <p id="fitTxt"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prova" class="dark">
+  <p class="eyebrow reveal">Prova virtuale</p>
+  <h2 class="reveal">Provali.<br>Ovunque tu sia.</h2>
+  <p class="lead reveal">Usa la fotocamera del computer per vedere come ti stanno, in tempo reale.</p>
+  <div id="wrap" class="reveal"><div class="ph" id="ph"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>La fotocamera è spenta</div><video id="vid" playsinline muted></video><canvas id="tryon"></canvas></div>
+  <div class="tryctrl" id="tryCtrl">
+    <div class="trow"><span>Montatura</span><div class="pal" id="tpal"></div></div>
+    <div class="trow"><span>Lenti</span><div class="lensbar" id="tlens"></div></div>
+    <p id="tName"></p>
+  </div>
+  <div class="btns"><button class="btn p" id="cam">Attiva fotocamera</button></div>
+  <p id="stato"></p>
+</section>
+
+
+<section id="sostenibile">
+  <p class="eyebrow reveal">Sostenibilità</p>
+  <h2 class="reveal">Belli. E buoni<br>per il pianeta.</h2>
+  <div class="stats">
+    <div class="reveal"><b><span class="count" data-n="68">0</span>%</b><p>acetato di origine vegetale, da fibre di cotone e legno</p></div>
+    <div class="reveal"><b><span class="count" data-n="100">0</span>%</b><p>packaging in carta riciclata, senza plastica</p></div>
+    <div class="reveal"><b><span class="count" data-n="2">0</span> anni</b><p>di garanzia, perché un oggetto che dura inquina meno</p></div>
+  </div>
+</section>
+
+<section id="confezione">
+  <p class="eyebrow reveal">Nella confezione</p>
+  <h2 class="reveal">Tutto quello che serve.</h2>
+  <div class="box">
+    <div class="reveal"><svg viewBox="0 0 24 24"><circle cx="6.5" cy="13" r="3.5"/><circle cx="17.5" cy="13" r="3.5"/><path d="M10 12.5q2-1.5 4 0M3 12L2 9M21 12l1-3"/></svg><b>TG One</b><span>Con le lenti che hai scelto</span></div>
+    <div class="reveal"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="9" rx="4.5"/><path d="M3 12.5h18"/></svg><b>Astuccio rigido</b><span>In feltro riciclato</span></div>
+    <div class="reveal"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 9h16M4 13h16M4 17h16" opacity=".5"/></svg><b>Panno in microfibra</b><span>Per lenti sempre pulite</span></div>
+    <div class="reveal"><svg viewBox="0 0 24 24"><path d="M7 3h10v18H7z"/><path d="M10 7h4M10 11h4M10 15h2"/></svg><b>Certificato</b><span>Garanzia e autenticità</span></div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 class="reveal">Domande frequenti.</h2>
+  <div class="faq">
+    <details class="reveal"><summary>Posso montare lenti graduate?</summary><p>Sì. Durante l'acquisto puoi caricare la tua prescrizione: le lenti graduate vengono montate dal nostro laboratorio.</p></details>
+    <details class="reveal"><summary>Come funziona la prova virtuale?</summary><p>Usa la fotocamera del computer per riconoscere il viso direttamente nel browser. Le immagini non vengono inviate né salvate.</p></details>
+    <details class="reveal"><summary>Quanto tempo ho per il reso?</summary><p>30 giorni dalla consegna. Il reso è gratuito, basta rimandarli nella confezione originale.</p></details>
+    <details class="reveal"><summary>Come pulisco il cristallo?</summary><p>Acqua tiepida e il panno in microfibra incluso. Evita alcol e detergenti aggressivi sull'acetato.</p></details>
+  </div>
+</section>
+
+<section id="acquista">
+  <p class="eyebrow reveal">Acquista</p>
+  <h2 class="reveal grad">Pronti a guardare<br>il mondo in cristallo?</h2>
+  <div class="buybox reveal">
+    <div class="bl"><b>TG One</b><span>Cristallo originale o in 5 tinte</span></div>
+    <div class="br"><div class="pr">189 €</div><a class="btn p" href="#">Acquista</a></div>
+  </div>
+  <div class="perks">
+    <div class="reveal"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><b>Spedizione gratuita</b><span>Consegna in 2–3 giorni</span></div>
+    <div class="reveal"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg><b>Reso in 30 giorni</b><span>Senza domande</span></div>
+    <div class="reveal"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><b>Garanzia 2 anni</b><span>Su montatura e cerniere</span></div>
+  </div>
+</section>
+<footer>
+  <div class="fcols">
+    <div><b>TG Eyewear</b><span>Occhiali progettati in Italia.</span></div>
+    <div><b>Prodotto</b><a href="#esploso">Design</a><a href="#specifiche">Specifiche</a><a href="#colori">Colori</a></div>
+    <div><b>Assistenza</b><a href="#prova">Prova virtuale</a><a href="#acquista">Spedizioni</a><a href="#acquista">Resi</a></div>
+  </div>
+  <p class="copy">© 2026 TG Eyewear. Tutti i diritti riservati.</p>
+</footer>
+
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+
+// colori: "Originale" = materiali del file .glb; gli altri tingono solo struttura e aste
+const COLORI={'Cristallo originale':null,'Fumo':'#6e6e73','Ambra':'#c47a2c','Oceano':'#2f6db5','Rosa':'#e7a1b0','Verde salvia':'#7f9c7b'};
+const INFO={
+  lenti:{t:'Lenti',m:'Policarbonato · UV400',d:"Lenti avvolgenti in policarbonato, leggere e infrangibili, con protezione totale dai raggi UV.",dz:1.3},
+  struttura:{t:'Frontale',m:'Acetato trasparente',d:"Un unico pezzo di acetato trasparente, lucidato a mano per una brillantezza da cristallo.",dz:0},
+  naselli:{t:'Naselli',m:'Gomma morbida',d:"Naselli in gomma morbida che distribuiscono il peso e non lasciano segni.",dz:-.7},
+  ferramenta:{t:'Cerniere',m:'Acciaio inox',d:"Cerniere in acciaio inox a cinque cilindri: apertura fluida, per anni.",dz:-1.3},
+  aste:{t:'Aste',m:'Acetato con anima in metallo',d:"Aste sottili con anima flessibile, si adattano alla forma del viso.",dz:-1.9},
+  terminali:{t:'Terminali',m:'Gomma morbida',d:"Terminali in gomma che restano fermi dietro l'orecchio, senza stringere.",dz:-2.6}
+};
+const NODI=['struttura','lenti','aste','gomma','ferramenta'];
+const $=id=>document.getElementById(id);
+let cur='Cristallo originale', T;
+
+const loader=new GLTFLoader();
+const GLB=Uint8Array.from(atob(window.GLB),c=>c.charCodeAt(0)).buffer;
+const loadGLB=cb=>loader.parse(GLB.slice(0),'',cb,e=>console.error(e));
+
+function makeRenderer(canvas){
+  const r=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  r.setPixelRatio(Math.min(devicePixelRatio,1.25));
+  r.toneMapping=THREE.ACESFilmicToneMapping;
+  const s=new THREE.Scene();
+  s.environment=new THREE.PMREMGenerator(r).fromScene(new RoomEnvironment(),.04).texture;
+  return [r,s];
+}
+
+// modello: Y in alto, frontale verso +Z. Centrato e largo 2 unità.
+function prepare(gltf){
+  const root=gltf.scene, g=new THREE.Group(); g.add(root);
+  const box=new THREE.Box3().setFromObject(root), size=box.getSize(new THREE.Vector3());
+  const k=2/size.x; root.scale.setScalar(k);
+  const c=box.getCenter(new THREE.Vector3()); root.position.set(-c.x*k,-c.y*k,-box.max.z*k*.5);
+  g.updateMatrixWorld(true);
+  const parts=[];
+  root.traverse(o=>{ if(!o.isMesh) return;
+    o.material=o.material.clone(); o.userData.c0=o.material.color.clone();
+    const ctr=new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3());
+    let key=null; for(let a=o;a&&!key;a=a.parent) key=NODI.find(n=>(a.name||'').toLowerCase().includes(n));
+    if(key==='gomma') key=ctr.z<-.5?'terminali':'naselli';
+    // esploso ordinato: ogni pezzo scorre solo lungo l'asse della profondità
+    parts.push({o,key,base:o.position.clone(),dir:new THREE.Vector3(0,0,(INFO[key]?.dz||0)/k)});
+  });
+  return {g,root,parts};
+}
+
+function applyColor(m){
+  const c=COLORI[cur];
+  m.parts.forEach(p=>{
+    const mat=p.o.material, frame=p.key==='struttura'||p.key==='aste';
+    if(!frame&&p.key!=='lenti') return;
+    // cristallo visibile: riflessi, leggera tinta e spessore
+    mat.specularIntensity=1; mat.clearcoat=1; mat.clearcoatRoughness=.05; mat.ior=1.5;
+    const Lz=LENTI[curL];
+    if(p.key==='lenti'){mat.color.set(Lz.c);mat.roughness=0;mat.thickness=.15;mat.metalness=Lz.m||0;}
+    else{mat.color.set(c||'#dfe7f0');mat.roughness=.08;mat.thickness=.8;
+      mat.attenuationColor=new THREE.Color(c||'#8fa6bf');mat.attenuationDistance=c?.4:.9;}
+    // niente "transmission" (molto pesante): cristallo = trasparenza + riflessi
+    mat.transmission=0;mat.transparent=true;mat.depthWrite=p.key!=='lenti';mat.envMapIntensity=1.8;
+    mat.opacity=p.o.userData.op=p.key==='lenti'?Math.max(Lz.o,.25):(c?.9:(m.isTry?.78:.55));
+  });
+}
+
+// sfondi sfumati (glow dietro gli occhiali) e ombra
+function radTex(a,b){const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d'),g=x.createRadialGradient(256,256,0,256,256,256);g.addColorStop(0,a);g.addColorStop(1,b);x.fillStyle=g;x.fillRect(0,0,512,512);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+const bgTex=inner=>radTex(inner,'#ffffff');
+
+// ---------- visualizzatori ----------
+const views=[];
+function viewer(id,update,z=6.2){
+  const cv=$(id), [r,s]=makeRenderer(cv);
+  s.background=id==='c2'?new THREE.Color('#f5f5f7'):bgTex(id==='c1'?'#e4ebf5':'#eef1f5');
+  if(id!=='c2'){ // ombra morbida sotto gli occhiali
+    const sh=new THREE.Mesh(new THREE.PlaneGeometry(3.2,1.4),new THREE.MeshBasicMaterial({map:radTex('rgba(0,0,0,.28)','rgba(0,0,0,0)'),transparent:true,depthWrite:false}));
+    sh.rotation.x=-Math.PI/2; sh.position.y=-.48; s.add(sh); }
+  const cam=new THREE.PerspectiveCamera(28,1,.1,100); cam.position.set(0,0,z);
+  const v={cv,r,s,cam,update,m:null};
+  loadGLB(gl=>{v.m=prepare(gl);s.add(v.m.g);applyColor(v.m);});
+  views.push(v);
+  new ResizeObserver(()=>{const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}).observe(cv);
+  return v;
+}
+function resize(){views.forEach(v=>{const w=v.cv.clientWidth,h=v.cv.clientHeight;v.r.setSize(w,h,false);v.cam.aspect=w/h;v.cam.updateProjectionMatrix();});}
+addEventListener('resize',resize);
+const prog=el=>{const r=el.getBoundingClientRect();return Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));};
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+
+// 1. hero: entra ruotando e segue il mouse
+let mx=0,my=0; addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;});
+viewer('c1',(m,t)=>{
+  const s=Math.min(1,t/1600), e=ease(s);
+  m.g.rotation.y+=((-.35+mx*.6)*e+(1-e)*-2.2-m.g.rotation.y)*.08;
+  m.g.rotation.x+=((.12+my*.25)-m.g.rotation.x)*.06;
+  m.g.position.y=Math.sin(t/1400)*.04;
+});
+
+// 2. esploso a comando: "Scomponi" apre, i pulsanti dei pezzi mettono a fuoco, "Ricomponi" chiude
+const KEYS=Object.keys(INFO);
+const clamp=x=>Math.min(1,Math.max(0,x)), camP=new THREE.Vector3(0,.2,7), look=new THREE.Vector3(), tmp=new THREE.Box3(), fb=new THREE.Box3();
+let open=0, openT=0, f=-1, lastF=-2, lastT=0;
+KEYS.forEach((k,i)=>{const b=document.createElement('button');b.textContent=INFO[k].t;b.onclick=()=>{f=f===i?-1:i;};$('parts').append(b);});
+$('expBtn').onclick=()=>{open=open?0:1;if(!open)f=-1;};
+$('prevP').onclick=()=>{f=f<=0?KEYS.length-1:f-1;};
+$('nextP').onclick=()=>{f=(f+1)%KEYS.length;};
+viewer('c2',(m,t,v)=>{
+  const dt=Math.min(.05,(t-lastT)/1000||0); lastT=t;
+  openT+=((open?1:0)-openT)*Math.min(1,dt*2.2);
+  const F=open&&openT>.6?f:-1;
+  $('esploso').classList.toggle('isOpen',!!open);
+  $('expBtn').textContent=open?'Ricomponi':'Scomponi';
+  m.g.rotation.set(.12+.2*openT,-.15-.95*openT+(1-openT)*Math.sin(t/2200)*.25,0);
+  fb.makeEmpty();
+  m.parts.forEach(p=>{
+    const i=Math.max(0,KEYS.indexOf(p.key));
+    const o=ease(clamp(openT*1.5-i*.08));
+    p.o.position.copy(p.base).addScaledVector(p.dir,o);
+    p.o.position.y+=Math.sin(t/900+i*1.3)*.0012*o;
+    const mat=p.o.material, on=F<0||p.key===KEYS[F];
+    mat.transparent=true; mat.opacity+=((on?(p.o.userData.op??1):0)-mat.opacity)*.15; p.o.visible=mat.opacity>.02;
+  });
+  m.g.updateMatrixWorld(true);
+  m.parts.forEach(p=>{ if(F<0||p.key===KEYS[F]) fb.union(tmp.setFromObject(p.o)); });
+  const c=fb.getCenter(new THREE.Vector3()), r=fb.getSize(new THREE.Vector3()).length();
+  look.lerp(c.clone().setY(c.y+(F<0?.45:0)),.08);
+  camP.lerp(c.clone().add(new THREE.Vector3(0,F<0?.6:.5,F<0?Math.max(8.5,r*1.9):Math.max(4,r*2.6))),.06);
+  v.cam.position.copy(camP); v.cam.lookAt(look);
+  const W2=v.cv.clientWidth,H2=v.cv.clientHeight; v.vo=(v.vo||0)+(((F>=0&&W2>860)?-.2:0)-(v.vo||0))*.08;
+  v.cam.setViewOffset(W2,H2,v.vo*W2,0,W2,H2);
+  if(F!==lastF){
+    lastF=F; const cap=$('cap');
+    if(F>=0){const I=INFO[KEYS[F]];
+      cap.innerHTML=`<div class="num">0${F+1}<span>/0${KEYS.length}</span></div><h3>${I.t}</h3><p class="mat">${I.m}</p><p>${I.d}</p>`;
+      cap.classList.remove('show'); void cap.offsetWidth; cap.classList.add('show');
+    } else cap.classList.remove('show');
+    [...$('parts').children].forEach((b,i)=>b.classList.toggle('on',i===F));
+    $('esploso').classList.toggle('isFocus',F>=0);
+  }
+});
+
+// 3. colori: trascina per ruotare
+let drag=0,lastX=0,rotC=-.4,vel=0;
+$('c3').onpointerdown=e=>{drag=1;lastX=e.clientX;};
+addEventListener('pointerup',()=>drag=0);
+addEventListener('pointermove',e=>{if(drag){vel=(e.clientX-lastX)*.01;rotC+=vel;lastX=e.clientX;}});
+viewer('c3',m=>{if(!drag){vel*=.95;rotC+=vel+.003;}m.g.rotation.set(.15,rotC,0);});
+
+resize();
+(function loop(t){
+  requestAnimationFrame(loop);
+  views.forEach(v=>{const r=v.cv.getBoundingClientRect(); if(!v.m||r.bottom<0||r.top>innerHeight) return; v.update(v.m,t,v); v.r.render(v.s,v.cam);});
+})(0);
+
+// palette
+function setColor(n){
+  cur=n; $('nomeCol').textContent=n;
+  views.forEach(v=>v.m&&applyColor(v.m)); if(T) applyColor(T);
+  // lo sfondo della sezione colori prende una tinta leggera del colore scelto
+  const tint='#'+new THREE.Color('#ffffff').lerp(new THREE.Color(COLORI[n]||'#dfe7f0'),.22).getHexString();
+  const v3=views[2]; if(v3){v3.s.background?.dispose?.();v3.s.background=bgTex(tint);}
+  $('pal').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.title===n));
+}
+for(const n in COLORI){const b=document.createElement('button');b.title=n;b.style.background=COLORI[n]||'linear-gradient(135deg,#fff,#dfe6ee)';b.onclick=()=>setColor(n);$('pal').append(b);}
+setColor(cur);
+
+// disegno tecnico dal modello reale (unità del file = metri)
+loadGLB(gl=>{
+  const sc=gl.scene, box=n=>{const b=new THREE.Box3();sc.traverse(o=>{if(o.isMesh){let a=o;while(a&&!(a.name||'').toLowerCase().includes(n))a=a.parent;if(a)b.expandByObject(o);}});return b;};
+  sc.updateMatrixWorld(true);
+  const all=new THREE.Box3().setFromObject(sc), L=box('lenti'), A=box('aste');
+  // lente destra (x>0) e ponte = distanza fra le due lenti
+  const lr=new THREE.Box3(), ll=new THREE.Box3();
+  sc.traverse(o=>{if(o.isMesh){let a=o;while(a&&!(a.name||'').toLowerCase().includes('lenti'))a=a.parent;if(a){const b=new THREE.Box3().setFromObject(o);(b.getCenter(new THREE.Vector3()).x>0?lr:ll).union(b);}}});
+  const mm=v=>(v*1000).toFixed(1).replace('.0','');
+  const W=all.max.x-all.min.x, lensW=lr.max.x-lr.min.x, bridge=lr.min.x-ll.max.x, lensH=lr.max.y-lr.min.y, temple=A.max.z-A.min.z, H=all.max.y-all.min.y;
+  $('sigla').textContent=`${Math.round(lensW*1000)} □ ${Math.round(bridge*1000)} · ${Math.round(temple*1000)}`;
+  $('dims').innerHTML=[['Larghezza frontale',W],['Larghezza lente',lensW],['Altezza lente',lensH],['Ponte',bridge],['Lunghezza aste',temple],['Ingombro in altezza',H]]
+    .map(([k,v])=>`<div><dt>${k}</dt><dd>${mm(v)} mm</dd></div>`).join('');
+  // linee: riempimento bianco + spigoli scuri (rimozione linee nascoste)
+  const ink=new THREE.LineBasicMaterial({color:0x1d1d1f}), fill=new THREE.MeshBasicMaterial({color:0xffffff,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
+  sc.traverse(o=>{if(o.isMesh){o.add(new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry,28),ink));o.material=fill;}});
+  const pad=.022, REN=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+  function draw(cid,sid,side){
+    const u0=side?all.min.z:all.min.x,u1=side?all.max.z:all.max.x,v0=all.min.y,v1=all.max.y;
+    const l=u0-pad,r=u1+pad,b=v0-pad,t=v1+pad,cw=r-l,ch=t-b, cv=$(cid), px=Math.min(1100,cv.parentNode.clientWidth*2||1000);
+    cv.width=px;cv.height=Math.round(px*ch/cw);
+    const cam=new THREE.OrthographicCamera(l,r,t,b,-10,10);
+    if(side){cam.position.set(1,0,0);cam.lookAt(0,0,0);cam.left=-r;cam.right=-l;cam.updateProjectionMatrix();} // da destra: +z a sinistra... invertito sotto
+    const scn=new THREE.Scene();scn.add(sc);REN.setSize(cv.width,cv.height,false);REN.render(scn,cam);scn.remove(sc);
+    cv.getContext('2d').drawImage(REN.domElement,0,0);
+    // quote in SVG nello stesso sistema di coordinate (y verso il basso)
+    const svg=$(sid);svg.setAttribute('viewBox',`${l} ${-t} ${cw} ${ch}`);svg.setAttribute('preserveAspectRatio','none');svg.style.aspectRatio=cw/ch;
+    const fs=cw*.022, X=side?(z=>-z+ (l+r)):(x=>x);
+    const dim=(x1,y1,x2,y2,txt,vert)=>{const mx=(x1+x2)/2,my=(y1+y2)/2,tw=txt.length*fs*.62;
+      return `<line class="d" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" vector-effect="non-scaling-stroke" marker-start="url(#ar)" marker-end="url(#ar)"/>`+
+      (vert?`<g transform="rotate(-90 ${mx} ${my})"><rect class="tb" x="${mx-tw/2-fs*.3}" y="${my-fs*.7}" width="${tw+fs*.6}" height="${fs*1.3}"/><text x="${mx}" y="${my+fs*.35}" font-size="${fs}" text-anchor="middle">${txt}</text></g>`
+            :`<rect class="tb" x="${mx-tw/2-fs*.3}" y="${my-fs*.7}" width="${tw+fs*.6}" height="${fs*1.3}"/><text x="${mx}" y="${my+fs*.35}" font-size="${fs}" text-anchor="middle">${txt}</text>`);};
+    const ext=(x1,y1,x2,y2)=>`<line class="x" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" vector-effect="non-scaling-stroke"/>`;
+    let g=`<defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="${fs*.75}" markerHeight="${fs*.75}" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#0071e3" stroke-width="1.5"/></marker></defs>`;
+    const yT=-(v1+pad*.55), yB=-(v0-pad*.55);
+    if(!side){
+      g+=ext(all.min.x,-v1,all.min.x,yT)+ext(all.max.x,-v1,all.max.x,yT)+dim(all.min.x,yT,all.max.x,yT,mm(W)+' mm');
+      g+=ext(lr.min.x,-lr.min.y,lr.min.x,yB)+ext(lr.max.x,-lr.min.y,lr.max.x,yB)+dim(lr.min.x,yB,lr.max.x,yB,mm(lensW));
+      g+=dim(ll.max.x,-(lr.max.y+pad*.15),lr.min.x,-(lr.max.y+pad*.15),mm(bridge));
+      const xR=all.max.x+pad*.55; g+=ext(lr.max.x,-lr.max.y,xR,-lr.max.y)+ext(lr.max.x,-lr.min.y,xR,-lr.min.y)+dim(xR,-lr.max.y,xR,-lr.min.y,mm(lensH),1);
+    } else {
+      g+=ext(X(A.max.z),-A.min.y,X(A.max.z),yB)+ext(X(A.min.z),-A.min.y,X(A.min.z),yB)+dim(X(A.max.z),yB,X(A.min.z),yB,mm(temple)+' mm');
+    }
+    svg.innerHTML=g;
+  }
+  draw('dFront','sFront',0); draw('dSide','sSide',1); REN.dispose(); REN.forceContextLoss();
+  // calzata: frontale ideale ≈ larghezza viso ±6 mm
+  const Wmm=W*1000, pos=v=>Math.min(100,Math.max(0,(v-125)/30*100));
+  $('zone').style.left=pos(Wmm-6)+'%';$('zone').style.width=(pos(Wmm+6)-pos(Wmm-6))+'%';
+  const fit=w=>{$('pin').style.left=pos(w)+'%';const d=Wmm-w;
+    $('fitTxt').innerHTML=Math.abs(d)<=6?`<b>Calzata ideale.</b> Il frontale da ${Math.round(Wmm)} mm segue la linea del tuo viso.`:d>6?`<b>Vestibilità ampia.</b> Per un viso stretto potrebbero risultare un po' larghi.`:`<b>Vestibilità aderente.</b> Su un viso largo potrebbero stringere leggermente.`;
+    $('seg').querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.w===w));};
+  $('seg').querySelectorAll('button').forEach(b=>b.onclick=()=>fit(+b.dataset.w));
+  fit(140);
+});
+
+// lenti
+const LENTI={Trasparenti:{c:'#c9d3dd',t:.9,o:.22,d:'Massima nitidezza, per tutti i giorni.'},'Filtro luce blu':{c:'#efe6b8',t:.85,o:.25,d:'Riduce l\'affaticamento davanti agli schermi.'},Sole:{c:'#2e2a26',t:.35,o:.75,d:'Categoria 3, per le giornate più luminose.'},'Specchiate blu':{c:'#1f5fbf',t:.3,o:.7,m:.6,d:'Riflesso blu a specchio, protezione UV400.'}};
+let curL='Trasparenti';
+function setLens(n){curL=n;$('lensTxt').textContent=LENTI[n].d;views.forEach(v=>v.m&&applyColor(v.m));if(T)applyColor(T);
+  $('lensbar').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.n===n));}
+for(const n in LENTI){const b=document.createElement('button');b.dataset.n=n;b.innerHTML=`<i style="background:${LENTI[n].c}"></i>${n}`;b.onclick=()=>setLens(n);$('lensbar').append(b);}
+viewer('c4',(m,t)=>{m.g.rotation.set(.2,Math.sin(t/2600)*.4,0);m.g.position.y=.08;},5.4);
+setLens(curL);
+
+// contatori animati
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const el=e.target,n=+el.dataset.n,t0=performance.now();
+  (function up(t){const k=Math.min(1,(t-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(up);})(t0);}),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>co.observe(el));
+
+// barra di avanzamento + voce di menu attiva
+addEventListener('scroll',()=>{
+  $('bar').style.width=scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%';
+  document.querySelectorAll('nav .links a').forEach(a=>{const s=document.querySelector(a.getAttribute('href')),r=s.getBoundingClientRect();a.classList.toggle('act',r.top<innerHeight/2&&r.bottom>innerHeight/2&&!a.classList.contains('buy'));});
+},{passive:true});
+
+// reveal allo scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ---------- prova virtuale ----------
+// scelte colore/lente anche qui, sincronizzate con le sezioni Colori e Lenti
+for(const n in COLORI){const b=document.createElement('button');b.title=n;b.dataset.c=n;b.style.background=COLORI[n]||'linear-gradient(135deg,#fff,#dfe6ee)';b.onclick=()=>setColor(n);$('tpal').append(b);}
+for(const n in LENTI){const b=document.createElement('button');b.dataset.n=n;b.innerHTML=`<i style="background:${LENTI[n].c}"></i>${n}`;b.onclick=()=>setLens(n);$('tlens').append(b);}
+const syncTry=()=>{$('tpal').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.c===cur));$('tlens').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.n===curL));$('tName').textContent=cur+' · lenti '+curL.toLowerCase();};
+const _sc=setColor,_sl=setLens; setColor=n=>{_sc(n);syncTry();}; setLens=n=>{_sl(n);syncTry();}; syncTry();
+
+let fl=null, r2, s2, oc, W, H, stream=null, raf=0, sm=null;
+const q=new THREE.Quaternion(), pos=new THREE.Vector3(), sc=new THREE.Vector3(), M4=new THREE.Matrix4();
+async function camOn(){
+  const st=$('stato'), btn=$('cam'); btn.disabled=true; st.textContent='Avvio fotocamera…';
+  try{
+    const vid=$('vid');
+    stream=await navigator.mediaDevices.getUserMedia({video:{width:1280,height:960,facingMode:'user'}});
+    vid.srcObject=stream; await vid.play(); $('ph').style.display='none';
+    if(!fl){
+      st.textContent='Caricamento riconoscimento del viso…';
+      const MP='https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/';
+      const Vs=await import(MP+'vision_bundle.mjs');
+      const fs=await Vs.FilesetResolver.forVisionTasks(MP+'wasm');
+      fl=await Vs.FaceLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task',delegate:'GPU'},runningMode:'VIDEO',numFaces:1,outputFacialTransformationMatrixes:true});
+      const cv=$('tryon'); [r2,s2]=makeRenderer(cv);
+      s2.add(new THREE.AmbientLight(0xffffff,.6));
+      oc=new THREE.OrthographicCamera(0,1,0,-1,-10,10);
+      // misura dal riquadro (sempre visibile), non dal canvas nascosto
+      const fit=()=>{W=$('wrap').clientWidth;H=$('wrap').clientHeight;if(!W||!H)return;r2.setSize(W,H,false);oc.bottom=-H/W;oc.updateProjectionMatrix();};
+      fit(); new ResizeObserver(fit).observe($('wrap'));
+      loadGLB(gl=>{
+        T=prepare(gl); T.isTry=true; applyColor(T);
+        // testa ovale invisibile: nasconde le aste dietro il viso, le lascia visibili ai lati
+        const occ=new THREE.Mesh(new THREE.SphereGeometry(1,40,30),new THREE.MeshBasicMaterial({colorWrite:false}));
+        occ.scale.set(.062,.12,.1); occ.position.set(.002,.02,-.075); occ.renderOrder=-1; T.root.add(occ);
+        s2.add(T.g);
+      });
+    }
+    $('tryon').style.visibility='visible'; $('tryCtrl').classList.add('on');
+    st.textContent='Guarda dritto in camera'; btn.textContent='Spegni fotocamera'; btn.classList.replace('p','s'); btn.disabled=false; btn.onclick=camOff;
+    sm=null; cancelAnimationFrame(raf); loop();
+  }catch(err){st.textContent='Impossibile avviare la fotocamera: '+err.message;btn.disabled=false;}
+}
+function camOff(){
+  cancelAnimationFrame(raf); raf=0;
+  stream?.getTracks().forEach(t=>t.stop()); stream=null; $('vid').srcObject=null;
+  if(r2){r2.clear();} $('tryon').style.visibility='hidden'; $('ph').style.display='flex'; $('tryCtrl').classList.remove('on');
+  const btn=$('cam'); btn.textContent='Attiva fotocamera'; btn.classList.replace('s','p'); btn.onclick=camOn; $('stato').textContent='Fotocamera spenta.';
+}
+function loop(){
+  raf=requestAnimationFrame(loop); if(!T||!stream) return;
+  const vid=$('vid'); if(vid.readyState<2) return;
+  const res=fl.detectForVideo(vid,performance.now()), lm=res.faceLandmarks?.[0];
+  T.g.visible=!!lm;
+  if(lm){
+    const va=vid.videoWidth/vid.videoHeight, ca=W/H, sx=va>ca?va/ca:1, sy=va>ca?1:ca/va;
+    const P=i=>new THREE.Vector3((lm[i].x-.5)*sx+.5,-((lm[i].y-.5)*sy+.5)*H/W,0);
+    const L=P(33),R=P(263),N=P(168), w=L.distanceTo(R);
+    const target={p:L.clone().add(R).multiplyScalar(.5).lerp(N,.35),s:w*.8};
+    if(res.facialTransformationMatrixes?.length) M4.fromArray(res.facialTransformationMatrixes[0].data).decompose(pos,q,sc);
+    else q.setFromEuler(new THREE.Euler(0,0,Math.atan2(R.y-L.y,R.x-L.x)));
+    if(!sm) sm={p:target.p.clone(),s:target.s,q:q.clone()};
+    sm.p.lerp(target.p,.5); sm.s+=(target.s-sm.s)*.5; sm.q.slerp(q,.5);
+    T.g.position.copy(sm.p); T.g.scale.setScalar(sm.s); T.g.quaternion.copy(sm.q);
+  }
+  r2.render(s2,oc);
+}
+$('cam').onclick=camOn;
+</script>
+</body>
+</html>
